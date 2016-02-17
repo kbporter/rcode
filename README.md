@@ -1,6 +1,17 @@
 # rcode
+- code for analyzing behavioral error rates of an enumeration task  
 
-code for analyzing behavioral data in R 
+### linregR.R
+- performs linear regresson on error rates and calculates R2
+ 
+###### Inputs:
+- error rates in .csv files (rows = subjects, columns = stimulus condition) 
+- can take multiple experiments/csv files in conditions vector (line 4)
 
-linregR - takes an input of error rates in a .csv file and performs linear regression.
-  The output is csv files with the fitline and r2 values, as well as png figures.
+###### Outputs:
+*For each experiment*
+- csv file with the fitline points for each subject
+- csv with r2 values for each subject
+
+*For each subject + experiment*
+- png of the raw data, with the fitline and r2 value displayed
