@@ -1,20 +1,20 @@
 # ### LINEAR REGRESSION #### 
 ### last upate: 11/23/15 ##
 
-conditions <- c("Basic", "Jitter", "Move")
-##completed conditions: "Basic", "Jitter", "Move"
-folder <- "~/Dropbox/Rsubitizing/Exp1/"
-##completed folders: "~/Dropbox/Rsubitizing/Exp1/"
-nsub <- 12
-setSize <- 7
+conditions <- c("Basic", "Jitter", "Move") # have data from 3 different experiments/stimulus conditions
+# folder <- "~/Dropbox/Rsubitizing/Exp1/"
+datafolder <- "./" 
+savefolder <- "./linregOutput/"
+nsub <- 12 # number of subjects in each experiments <- this needs to match for all exp in conditions vector
+setSize <- 7 # max numerosity or set size for stimuli in each display
 
 for (icond in 1:length(conditions) )
 {
   ##create names for input + output files
-  errorName <- paste(folder,conditions[icond],"_",nsub,"s","_",setSize,".csv",sep = "")
-  figname <- paste(folder,conditions[icond],"_Linear_sxxx.png",sep = "")
-  saveFit <- paste(folder,"error_",conditions[icond], "_linearFitline.csv",sep = "")
-  saveR2 <- paste(folder, "error_",conditions[icond],"_r2Linear.csv",sep = "")
+  errorName <- paste(datafolder,conditions[icond],"_",nsub,"s","_",setSize,".csv",sep = "") # input .csv with error rates
+  figname <- paste(savefolder,conditions[icond],"_Linear_sxxx.png",sep = "") # figure name
+  saveFit <- paste(savefolder,"error_",conditions[icond], "_linearFitline.csv",sep = "") # save file for fitline params
+  saveR2 <- paste(savefolder, "error_",conditions[icond],"_r2Linear.csv",sep = "") # safe file for r2 values
   
   ## load data
   errors<- read.csv(errorName,header=F)
